@@ -40,10 +40,7 @@ public class EmployeeWage {
 			System.out.println("Employee is Full Time");
 		break;
 		}
-		int dailyWage = wagePerHour*fullDayHours;
-		System.out.println("Full time Employee Daily Wage is : "+dailyWage);
-		int dailyWagePart=wagePerHourPart*fullDayHourPart;
-		System.out.println("Part Time Employee daily Wage : "+dailyWagePart);
+		
 		}
 
 }
