@@ -22,8 +22,8 @@ public class EmployeeWage {
 		}
 		System.out.println("No of Days Presnent = "+presentCounter);
 		System.out.println("No of Days Absent = "+absentCounter);
-		int totalWage = (wagePerHour*fullDayHours)*presentCounter;
-		System.out.println("Total Wage is : "+totalWage);
+		int dailyWage = wagePerHour*fullDayHours;
+		System.out.println("Daily Wage is : "+dailyWage);
 	}
 
 }
