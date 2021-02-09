@@ -1,48 +1,48 @@
 
 public class EmployeeWage {
+	public static final int WAGE_PER_HOUR=20;
+	public static final int FULL_DAY_HOURS=8;
+	public static final int WAGE_PER_HOUR_PART=8;
+	public static final int FULL_DAY_HOUR_PART=4;
 	public static void main(String Args[])
 	{
 		System.out.println("Welcome To Employee Wage Comptation System");
 		int presentCounter=0;
 		int absentCounter=0;	
-		int wagePerHour=20;
-		int fullDayHours=8;
 		for(int i=0; i<30 ;i++)
-		{
-		float empCheck = Math.round(Math.random());
-		if(empCheck==0.0)
-		{
-			presentCounter++;
-		}
-		else
-		{
-			absentCounter++;
-		}
-		}
+			{
+				float empCheck = Math.round(Math.random());
+				if(empCheck==0.0)
+					{
+						presentCounter++;
+					}
+				else
+					{
+						absentCounter++;
+					}
+			}
 		System.out.println("No of Days Presnent = "+presentCounter);
 		System.out.println("No of Days Absent = "+absentCounter);
 		
 		long empType = Math.round(Math.random());
 		int flag=1;
 		if(empType==0)
-		{
-			flag=0;
-		}
-		int wagePerHourPart=8;
-		int fullDayHourPart=4;
+			{
+				flag=0;
+			}
 		
 		switch(flag) {
 		
-		case 0:
-			System.out.println("Employee is Part Time");
-		break;
-		case 1:
-			System.out.println("Employee is Full Time");
-		break;
-		}
-		int dailyWage = wagePerHour*fullDayHours;
+			case 0:
+				System.out.println("Employee is Part Time");
+				break;
+			case 1:
+				System.out.println("Employee is Full Time");
+				break;
+			     }
+		int dailyWage = WAGE_PER_HOUR*FULL_DAY_HOURS;
 		System.out.println("Full time Employee Daily Wage is : "+dailyWage);
-		int dailyWagePart=wagePerHourPart*fullDayHourPart;
+		int dailyWagePart=WAGE_PER_HOUR_PART*Full_DAY_HOUR_PART;
 		System.out.println("Part Time Employee daily Wage : "+dailyWagePart);
 		int partTimeHours=presentCounter*4;
 		int fullTimeHours=presentCounter*8;
@@ -68,9 +68,10 @@ public class EmployeeWage {
 			}
 			
 		}
-	 if (check==0)   {
+	 	if (check==0)   
+		{
 			System.out.println("Minimum WorKing Hours or Days not reached");
-	 }	
+	 	}	
 		
 	}
 }
