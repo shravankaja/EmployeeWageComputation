@@ -6,6 +6,6 @@ public class EmployeeWage {
 		dmartCompany.calcEmpWageFor();
 		Main nikeCompany = new Main(20, 40, 50, "Nike");
 		nikeCompany.calcEmpWageFor();
-
+		System.out.println(nikeCompany);
 	}
 }
