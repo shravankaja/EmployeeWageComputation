@@ -59,6 +59,7 @@ public class EmployeeWage implements IComputeEmpWage {
 		obj1.addCompanyEmpWage(20, 30, 40, "Shravan&Co");
 		obj1.calcEmpWageFor();
 		System.out.println("Total wage for Dmart : " + obj1.getTotalWage("Dmart"));
+		System.out.println("Total wage for Shravan&Co : " + obj1.getTotalWage("Shravan&Co"));
 	}
 
 }
