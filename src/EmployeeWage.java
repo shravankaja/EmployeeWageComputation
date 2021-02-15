@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class EmployeeWage {
+public class EmployeeWage implements IComputeEmpWage {
 	final static int IS_FULL_TIME = 1, IS_PART_TIME = 2;
 	private int numofCompany = 0;
 	private LinkedList<Main> cmpEmpWageArray;
