@@ -1,26 +1,53 @@
 import java.util.*;
 
 public class EmployeeWage {
+	final static int IS_FULL_TIME = 1, IS_PART_TIME = 2;
+	private int numofCompany = 0;
+	private Main[] cmpEmpWageArray;
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to the Employee Wage Computation");
-		Main companies_List[] = new Main[10];
+	public EmployeeWage() {
 
-		System.out.println("Enter number of companies");
-		Scanner sc = new Scanner(System.in);
-		int no_Of_Companies = sc.nextInt();
-		for (int i = 0; i < no_Of_Companies; i++) {
-			System.out.println("Enter employee hrs");
-			int emp_Hrs = sc.nextInt();
-			System.out.println("Enter work hours");
-			int wrk_Hrs = sc.nextInt();
-			System.out.println("Enter hours per month");
-			int hrs_Month = sc.nextInt();
-			System.out.println("Enter Company name");
-			String cmp_Name = sc.next();
-			companies_List[i] = new Main(emp_Hrs, wrk_Hrs, hrs_Month, cmp_Name);
-			companies_List[i].calcEmpWageFor();
-			companies_List[i].toString();
+		cmpEmpWageArray = new Main[5];
+	}
+
+	private void addCompanyEmpWage(int emp_hrs, int work_hrs, int hrs_month, String company) {
+		cmpEmpWageArray[numofCompany] = new Main(emp_hrs, work_hrs, hrs_month, company);
+		numofCompany++;
+	}
+
+	private void calcEmpWageFor() {
+		for (int i = 0; i < numofCompany; i++) {
+			cmpEmpWageArray[i].setTotalEmpWage(this.calcEmpWageFor(cmpEmpWageArray[i]));
+			System.out.println(cmpEmpWageArray[i]);
 		}
 	}
+
+	private int calcEmpWageFor(Main m) {
+		int empHrs = 0, empWage = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+		while (totalEmpHrs < m.MAX_HRS_IN_MONTH && totalWorkingDays < m.NUM_OF_WORKING_DAYS) {
+			totalWorkingDays++;
+			int empCheck = (int) (Math.random() * 10) % 3;
+			switch (empCheck) {
+			case 1:
+				empHrs = 8;
+				break;
+			case 2:
+				empHrs = 4;
+				break;
+			default:
+				empWage = 0;
+			}
+			totalEmpHrs += empHrs;
+			System.out.println("\nDAY#: " + totalWorkingDays + "EmpHr:" + empHrs);
+		}
+		return totalEmpHrs = totalEmpHrs * m.EMP_RATE_PER_HR;
+
+	}
+
+	public static void main(String[] args) {
+		EmployeeWage obj1 = new EmployeeWage();
+		obj1.addCompanyEmpWage(10, 20, 30, "Dmart");
+		obj1.calcEmpWageFor();
+	}
+
 }
